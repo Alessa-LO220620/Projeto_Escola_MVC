@@ -1,0 +1,49 @@
+<%-include ("../partials/header"); %>
+<section class="container">
+    <div class="row">
+        <div class="col">
+            <div class="row mt-5">
+                <div class="col-6">
+                    <h1>Lista de Professores</h1>
+                </div>
+                <div class="col-6">
+                    <a href="professores/cadastrarProfessores" class="btn btn-success">Cadastrar Professores</a>
+                </div>
+                <form action="/pesquisar" method="get" class="form-group col-12">
+                    <input class="form-control" type="search" name="pesquisa">
+                    <button class="btn btn-primary btn-sm" type="submit">Pesquisar</button>
+                </form>
+            </div>
+            <table class="table table-hover table-success">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Turma</th>
+                        <th>Turno</th>
+                        <th>Escola</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(resposta == ""){ %>
+                        <tr>
+                            <td colspan="4" class="alert alert-warning">Nenhum Professor cadastrado!</td>
+                        </tr>
+                    <%}else{resposta.forEach(function(professor){ %>
+                        <tr>
+                            <td><%= professor.nome %></td>
+                            <td><%= professor.turma %></td>
+                            <td><%= professor.turno %></td>
+                            <td><%= professor.escola %></td>
+                            <td>
+                                <a href="/professores/editarProfessores/<%=professor._id %>" class="btn btn-warning">Editar</a>
+                                <a href="/professores/deletarProfessores/<%=professor._id %>" class="btn btn-danger">Deletar</a>
+                            </td>
+                        </tr>
+                    <% })} %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<%-include ("../partials/footer"); %>
+<!-- o traço após o % ele importa os dados, no caso do = ele tras o item -->

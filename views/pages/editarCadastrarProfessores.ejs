@@ -1,0 +1,32 @@
+<%-include("../partials/header"); %>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <a href="/professores" class="btn btn-outline-warning btn-sm mt-3">Voltar na Listagem</a>
+            <h1 class="mt-5">Cadastrar Professores</h1>
+             <form action="/professores/editarProfessores" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" class="form-control" name="nome" placeholder="Digite nome completo" value="<%=resposta.nome%>">
+                </div>
+                <div class="form-group">
+                    <label for="turma">Digite a Turma</label>
+                    <input class="form-control"type="text" id="turma" name="turma" placeholder="Turma A, B ou C" value="<%=resposta.turma%>">
+                </div> 
+                <div class="form-group">
+                    <label for="turno">Digite o Turno</label>
+                    <input class="form-control"type="text" id="turno" name="turno" placeholder="Matutino, Vepsertino ou Noturno" value="<%=resposta.turno%>">
+                </div>
+                <div class="form-group">
+                    <label for="escola">Digite a Escola</label>
+                    <input class="form-control" type="text" id="escola" name="escola" placeholder="Escola Estadual Senador João Bosco" value="<%=resposta.escola%>">
+                </div>
+                <input type="hidden" name="id" value="<%=resposta._id%>">
+                <button class="btn btn-success" type="submit">Salvar Alterações</button>    
+            </form>
+        </div>
+        
+    </div>
+</div>
+
+<%-include("../partials/footer"); %>

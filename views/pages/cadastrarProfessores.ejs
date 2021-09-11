@@ -1,0 +1,31 @@
+<%-include("../partials/header"); %>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <a href="/professores" class="btn btn-outline-warning btn-sm mt-3">Voltar na Listagem</a>
+            <h1 class="mt-5">Cadastrar Professores</h1>
+             <form action="/professores/cadastrarProfessores" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" class="form-control" name="nome" placeholder="Digite nome completo">
+                </div>
+                <div class="form-group">
+                    <label for="turma">Digite a Turma</label>
+                    <input class="form-control"type="text" id="turma" name="turma" placeholder="Turma A, B ou C">
+                </div> 
+                <div class="form-group">
+                    <label for="turno">Digite o Turno</label>
+                    <input class="form-control"type="text" id="turno" name="turno" placeholder="Matutino, Vepsertino ou Noturno">
+                </div>
+                <div class="form-group">
+                    <label for="escola">Digite a Escola</label>
+                    <input class="form-control" type="text" id="escola" name="escola" placeholder="Escola Estadual Senador João Bosco">
+                </div>
+                <button class="btn btn-success" type="submit">Enviar</button>    
+            </form>
+        </div>
+        
+    </div>
+</div>
+
+<%-include("../partials/footer"); %>
